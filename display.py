@@ -13,6 +13,18 @@ class Display:
         self.ax.axes.xaxis.set_visible(False)
         self.ax.axes.yaxis.set_visible(False)
 
+    def add_line(self, coord1, coord2, color="red", arrow=False):
+        x = coord1["x"] + 7
+        y = -coord1["y"] + 7
+        dx = coord2["x"] - coord1["x"]
+        dy = -(coord2["y"] - coord1["y"])
+        self.ax.arrow(x, y, dx, dy,
+                  head_width=0.2 if arrow else 0,
+                  width=0.05,
+                  color=color,
+                  fill=True,
+                  length_includes_head=True)
+
     def add_patch(self, location, color):
         return self.ax.add_patch(Rectangle((location[1] - .5, location[0] - .5), 1, 1, fill=True, color=color, lw=0))
 
