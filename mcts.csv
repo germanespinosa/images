@@ -1,4 +1,4 @@
-States,Simulated,Survival rate
+Depth,MCTS
 0,0
 10000,0.001
 20000,0.001033333333
