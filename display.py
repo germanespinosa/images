@@ -6,10 +6,10 @@ from visibility import Visibility
 
 
 class Display:
-    def __init__ (self, heat_map):
+    def __init__ (self, heat_map, cmap = "Reds"):
         self.heat_map = heat_map
         self.fig, self.ax = plt.subplots(1, 1, figsize=(10, 10))
-        self.im = self.ax.imshow(self.heat_map.values, cmap='Reds', interpolation='nearest')
+        self.im = self.ax.imshow(self.heat_map.values, cmap=cmap, interpolation='nearest')
         self.ax.axes.xaxis.set_visible(False)
         self.ax.axes.yaxis.set_visible(False)
 
