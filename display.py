@@ -32,7 +32,7 @@ class Display:
         return self.ax.add_patch(Rectangle((location[1] - .5, location[0] - .5), 1, 1, fill=False, edgecolor=color, lw=2))
 
     def add_text(self, location, text):
-        return self.ax.add_patch(location[1] - .5, location[0] - .5, text)
+        return self.ax.add_text(location[1] - .5, location[0] - .5, text)
 
     def add_occlusions(self, color):
         for cell in self.heat_map.world.cells:
